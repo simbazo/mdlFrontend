@@ -8,7 +8,7 @@ When I created the editor, and to speed up, while looking for nice tools to get 
 
 So the exisitng editor we'll be switching off soon, and we'll be using new clean interface which old all our projects in one place.
 
-Maybe you guys must have some questions now, but for me myself the editor2 wasen't final product, was just playing around to get stuff done.
+Maybe you guys must have some questions now, but for me the editor2 wasen't final product, was just playing around to get stuff done.
 
 Bellow are some description about Angular.
 
