@@ -1,0 +1,55 @@
+<div class="wrapper">
+    <div class="block-center mt-xl wd-xl">
+        <!-- START panel-->
+        <div class="panel panel-dark panel-flat">
+            <div class="panel-heading text-center">
+                <a href="#">
+                    <img class="block-center img-rounded" src="assets/img/logos/Mdl_logo_colour-200x60.png" alt="Image" />
+                </a>
+            </div>
+            <div class="panel-body">
+                <p class="text-center pv">SIGN IN TO CONTINUE.</p>
+                 <div *ngIf="error" class="alert alert-danger alert-dismissible" role="alert">
+                     <button class="close" aria-label="Close" type="button">
+                        <span aria-hidden="true">×</span>
+                        <span class="sr-only">Close</span>
+                     </button>
+                     <p class="text-center">{{error}}</p>
+                 </div>
+                <form [formGroup]="loginForm" class="form-validate mb-lg" role="form" name="loginForm" novalidate="" (submit)="submitForm($event, loginForm.value)">
+                    <div class="form-group has-feedback">
+                        <input class="form-control" id="exampleInputEmail1" type="email" name="email" placeholder="Enter email" autocomplete="off" formControlName="email" required="" />
+                        <span class="fa fa-envelope form-control-feedback text-muted"></span>
+                        <span class="text-danger" *ngIf="loginForm.controls['email'].hasError('required') && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)">This field is required</span>
+                        <span class="text-danger" *ngIf="loginForm.controls['email'].hasError('email') && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)">This field must be a valid email address</span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input class="form-control" id="exampleInputPassword1" type="password" name="password" placeholder="Password" formControlName="password" required="" />
+                        <span class="fa fa-lock form-control-feedback text-muted"></span>
+                        <span class="text-danger" *ngIf="loginForm.controls['password'].hasError('required') && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">This field is required</span>
+                    </div>
+                    <div class="clearfix">
+                        <div class="checkbox c-checkbox pull-left mt0">
+                            <label>
+                                <input type="checkbox" value="" name="account_remember"/>
+                                <span class="fa fa-check"></span>Remember Me</label>
+                        </div>
+                        <div class="pull-right"><a class="text-muted" [routerLink]="'/recover'">Forgot your password?</a>
+                        </div>
+                    </div>
+                    <button class="btn btn-block btn-primary mt-lg" type="submit" [disabled]="!loginForm.valid">{{login}} <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" /></button>
+
+                </form>
+                <!-- <div class="alert alert-danger text-center" ></div> -->
+                <p class="pt-lg text-center">Need to Signup?</p><a class="btn btn-block btn-default" [routerLink]="'/register'">Register Now</a>
+            </div>
+        </div>
+        <!-- END panel-->
+        <div class="p-lg text-center">
+            <span>&copy;</span>
+            <span>{{ settings.app.year }}</span>
+            <span>-</span>
+            <span>{{ settings.app.name }}</span>
+        </div>
+    </div>
+</div>

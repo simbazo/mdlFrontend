@@ -1,0 +1,42 @@
+<div class="container-md">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="panel b">
+                <div class="list-group">
+                    <a class="list-group-item" (click)="settingActive=1" [ngClass]="{'active': (settingActive == 1)}">Business Entity</a>
+                    <a class="list-group-item" (click)="settingActive=2" [ngClass]="{'active': (settingActive == 2)}">Ngos Types</a>
+                    <a class="list-group-item" (click)="settingActive=3" [ngClass]="{'active': (settingActive == 3)}">Ngo Areas</a>
+                    <a class="list-group-item" (click)="settingActive=4" [ngClass]="{'active': (settingActive == 4)}">Sponsor Types</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div *ngIf="settingActive == 1">
+                <div class="panel b">
+                    <div class="panel-heading bg-gray-lighter text-bold">Business Entity</div>
+                    <div class="panel-body">
+                        <form action="">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input class="form-control" type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <button class="btn btn-info" type="button">Update settings</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="settingActive == 2">
+                <mdl-ngotypes></mdl-ngotypes>
+            </div>
+            <div *ngIf="settingActive == 3">
+                <mdl-area></mdl-area>
+        </div>
+        <div *ngIf="settingActive == 4">
+                <mdl-sponsortype></mdl-sponsortype>
+            </div>
+    </div>
+</div>

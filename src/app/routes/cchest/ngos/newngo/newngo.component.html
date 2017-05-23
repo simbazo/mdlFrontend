@@ -1,0 +1,148 @@
+<div class="content-heading">
+	Create NGO
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="row">
+			<div class="col-md-6" style="width:1035px;margin-left:20px"><br><button (click)="goBack()" class="btn btn-info btn-sm"> <i class="fa fa-chevron-left"></i> Back</button>
+			</div>
+		</div>
+	</div>
+	<div class="panel-body">
+		<form class="form-horizontal" [formGroup]="ngoForm" novalidate="" role="form" (submit)="submitForm($event, ngoForm.value)" autocomplete="off">
+			<fieldset>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">NGO Type</label>
+					<div class="col-sm-6">
+						<ng-select [allowClear]="true" [items]="types" [disabled]="disabled" (data)="refreshValue($event)" (selected)="selected($event)" (removed)="removed($event)" (typed)="typed($event)" placeholder="Select NGO Type">
+						</ng-select>
+					</div>
+				</div>	
+				<div class="form-group">
+
+					<label class="col-sm-2 control-label">Area</label>
+					<div class="col-sm-6">
+						<ng-select (data)="value" [multiple]="true" [items]="areas" [disabled]="disabled" (data)="refreshValue($event)" (selected)="selected($event)" (removed)="removed($event)" placeholder="Select NGO Area"></ng-select>
+					</div>
+				</div>		
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Acronym</label>
+					<div class="col-sm-6">
+						<input class="form-control input-sm" type="text" autocomplete="" formControlName="acronym" required  />
+						<span class="text-danger" *ngIf="ngoForm.controls['acronym'].hasError('required') && (ngoForm.controls['acronym'].dirty || ngoForm.controls['email'].touched)">Acronym is required field.</span>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Name</label>
+					<div class="col-sm-6">
+						<input class="form-control" type="text" formControlName="name" autocomplete required   />
+						<span class="text-danger" *ngIf="ngoForm.controls['name'].hasError('required') && (ngoForm.controls['name'].dirty || ngoForm.controls['name'].touched)">Name is required field.</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Contact Person</label>
+					<div class="col-sm-6">
+						<input class="form-control" type="text" formControlName="contact_person" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Phone</label>
+					<div class="col-sm-6">
+						<input class="form-control" type="text" formControlName="phone" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Email</label>
+					<div class="col-sm-6">
+						<input class="form-control" type="text" autocomplete="off"  required formControlName="email"  />
+						<span class="text-danger" *ngIf="ngoForm.controls.email.hasError('required') && (ngoForm.controls['email'].dirty || ngoForm.controls['email'].touched)">Email field is required</span>
+						<span class="text-danger" *ngIf="ngoForm.controls['email'].hasError('email') && (ngoForm.controls['email'].dirty || ngoForm.controls['email'].touched)">The email must be a valid email address</span>
+					</div>
+				</div>
+				<div formGroupName="localAddress">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">search Address</label>
+					<div class="col-sm-6" id="locationField">
+						<input type="text" size="100" class="form-control" 
+						[(ngModel)]="search" 
+						[options]='options' 
+						(setAddress) = "getAddress($event)"
+						(street_number) = 'street_number=$event'
+						(street)= 'street=$event'
+						(city)= 'city=$event'
+						(state)='state=$event'
+						(district)='district=$event'
+						(country)='country=$event'
+						(postal_code)='postal_code=$event'
+						(lat)='lat=$event' 
+						(lng)='lng=$event' 
+						(adr_address)='adr_address=$event' 
+						(name)='name=$event' 
+						(place_id)='place_id=$event'  
+						(types)='types=$event' 
+						(url)='url=$event'  
+						(utc_offset)='utc_offset=$event' 
+						(vicinity)='vicinity=$event' 
+						(photos)='photos=$event' 
+						(airport)='airport=$event' 
+						(CountryCodes)='CountryCodes=$event'
+						id="autocomplete" formControlName="search"
+						ng2-google-place-autocomplete /> 
+					</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Country</label>
+						<div class="col-sm-6">
+							<input class="form-control" type="text" formControlName="country_id" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Province</label>
+						<div class="col-sm-6">
+							<input class="form-control" type="text" formControlName="province" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">City</label>
+						<div class="col-sm-6">
+							<input class="form-control" type="text" formControlName="city" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Address</label>
+						<div class="col-sm-6">
+							<input class="form-control" type="text" formControlName="address" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Postal Code</label>
+						<div class="col-sm-6">
+							<input class="form-control" type="text" formControlName="postal_code" id="street_number" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">POBOX</label>
+						<div class="col-sm-6">
+							<input class="form-control" type="text" formControlName="pobox" />
+						</div>
+					</div>
+					</div>
+
+				</fieldset>
+
+				<!-- Buttons -->
+				<fieldset>
+					<div class="form-group">
+						<div class="col-sm-4 col-sm-offset-2">
+							<button (click)="goBack()" class="btn btn-default btn-oval btn-outline">Cancel</button>
+							<button class="btn btn-primary btn-outline btn-oval" type="submit" [disabled]="!ngoForm.valid">Save changes</button>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+

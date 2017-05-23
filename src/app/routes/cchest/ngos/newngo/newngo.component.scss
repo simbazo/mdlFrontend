@@ -1,0 +1,12 @@
+.col-sm-6{
+	margin-bottom:10px;
+}
+input.ng-invalid{
+	border-left: 1px solid red;
+	border-radius:0px;
+}
+
+input.ng-valid{
+	border-left: 1px solid green;
+	border-radius:0px;
+}

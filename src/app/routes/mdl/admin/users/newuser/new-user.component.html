@@ -1,0 +1,87 @@
+<div class="content-heading">
+	Create New User
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="row">
+			<div class="col-md-6" style="width:1035px;margin-left:20px"><br><button (click)="goBack()" class="btn btn-info btn-sm"> <i class="fa fa-chevron-left"></i> Back</button>
+			</div>
+		</div>
+	</div>
+	<div class="panel-body">
+		<form class="form-horizontal" [formGroup]="userForm" novalidate="" role="form" (submit)="submitForm($event, userForm.value)" autocomplete="off">
+			<fieldset>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">First Name</label>
+					<div class="col-sm-6">
+						<input class="form-control" type="text" autocomplete="" formControlName="first_name" required  />
+						<span class="text-danger" *ngIf="userForm.controls['first_name'].hasError('required') && (userForm.controls['first_name'].dirty || userForm.controls['email'].touched)">First Name is required field.</span>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Last Name</label>
+					<div class="col-sm-6">
+						<input class="form-control" type="text" formControlName="last_name" autocomplete required   />
+						<span class="text-danger" *ngIf="userForm.controls['last_name'].hasError('required') && (userForm.controls['last_name'].dirty || userForm.controls['last_name'].touched)">Last Name is required field.</span>
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Phone</label>
+					<div class="col-sm-6">
+						<input class="form-control" type="text" formControlName="phone" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Username</label>
+					<div class="col-sm-6">
+						<input class="form-control" type="text" formControlName="username" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Email</label>
+					<div class="col-sm-6">
+						<input class="form-control" type="text" autocomplete="off"  required formControlName="email"  />
+						<span class="text-danger" *ngIf="userForm.controls.email.hasError('required') && (userForm.controls['email'].dirty || userForm.controls['email'].touched)">Email field is required</span>
+						<span class="text-danger" *ngIf="userForm.controls['email'].hasError('email') && (userForm.controls['email'].dirty || userForm.controls['email'].touched)">The email must be a valid email address</span>
+					</div>
+				</div>
+
+                    <div formGroupName="passwordGroup">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Password</label>
+                            <div class="col-sm-6">
+                            	
+                            <input class="form-control" id="id-password" type="password" name="password" formControlName="password" [formControl]="userForm.get('passwordGroup.password')"/>
+                            <span class="text-danger" *ngIf="userForm.get('passwordGroup.password').hasError('required') && (userForm.get('passwordGroup.password').dirty || userForm.get('passwordGroup.password').touched)">This field is required</span>
+                            <span class="text-danger" *ngIf="userForm.get('passwordGroup.password').hasError('pattern') && (userForm.get('passwordGroup.password').dirty || userForm.get('passwordGroup.password').touched)">Input should match 'a-zA-Z0-9' and 6-10 length</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Retype Password</label>
+                            <div class="col-sm-6">
+                            	<input class="form-control" type="password" name="confirmPassword" formControlName="confirmPassword" [formControl]="userForm.get('passwordGroup.confirmPassword')"/>
+                            <span class="text-danger" *ngIf="userForm.get('passwordGroup.confirmPassword').hasError('equalTo')">Password does Not match</span>
+                            </div>
+                        </div>
+                    </div>
+			</fieldset>
+
+			<!-- Buttons -->
+			<fieldset>
+				<div class="form-group">
+					<div class="col-sm-4 col-sm-offset-2">
+						<button (click)="goBack()" class="btn btn-default btn-oval btn-outline">Cancel</button>
+						<button class="btn btn-primary btn-outline btn-oval" type="submit" [disabled]="!userForm.valid">Save changes</button>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+
