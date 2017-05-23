@@ -1,4 +1,16 @@
-# Ng2angle
+# MiDigital Life Front end
+
+Hi All.
+
+This repository, contain all clean code of frontend which we'll use for any coming up or existing project.
+
+When I created the editor, and to speed up, while looking for nice tools to get the treetable working, I couldn't get nice tool for angular, so i had to use JQuery Libraries just to get stuff going on.
+
+So the exisitng editor we'll be switching off soon, and we'll be using new clean interface which old all our projects in one place.
+
+Maybe you guys must have some questions now, but for me myself the editor2 wasen't final product, was just playing around to get stuff done.
+
+Bellow are some description about Angular.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
@@ -26,3 +38,6 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+/** Happy Coding */
+**Jacinto Joao** (JJ)
