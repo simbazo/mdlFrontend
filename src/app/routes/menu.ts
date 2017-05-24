@@ -67,8 +67,12 @@ const Logout = {
 const Forms = {
     text: 'Forms',
     link: '/forms',
-    icon: 'icon-note',
+    icon: 'icon-social-foursqare',
     submenu: [
+        {
+            text:'Form Builder',
+            link:'/forms/formbuilder'
+        },
         {
             text: 'Standard',
             link: '/forms/standard'

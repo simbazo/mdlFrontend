@@ -14,13 +14,15 @@ import { ExtendedComponent } from './extended/extended.component';
 import { ValidationComponent } from './validation/validation.component';
 import { UploadComponent } from './upload/upload.component';
 import { CropperComponent } from './cropper/cropper.component';
+import { FormbuilderComponent} from './formbuilder/formbuilder.component';
 
 const routes: Routes = [
     { path: 'standard', component: StandardComponent },
     { path: 'extended', component: ExtendedComponent },
     { path: 'validation', component: ValidationComponent },
     { path: 'upload', component: UploadComponent },
-    { path: 'cropper', component: CropperComponent }
+    { path: 'cropper', component: CropperComponent },
+    { path: 'formbuilder',component:FormbuilderComponent}
 ];
 
 @NgModule({
@@ -41,7 +43,8 @@ const routes: Routes = [
         ExtendedComponent,
         ValidationComponent,
         UploadComponent,
-        CropperComponent
+        CropperComponent,
+        FormbuilderComponent
     ],
     exports: [
         RouterModule
