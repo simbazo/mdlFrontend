@@ -18,6 +18,7 @@ export const routes = [
             { path: 'home', loadChildren: './home/home.module#HomeModule',canActivate: [AuthGuard] },
             { path:'mdl', loadChildren:'./mdl/mdl.module#MdlModule',canActivate: [AuthGuard] },
             { path: 'cchest',loadChildren:'./cchest/cchest.module#CChestModule',canActivate: [AuthGuard]},
+            { path: 'clients',loadChildren:'./clients/client.module#ClientModule',canActivate:[AuthGuard]},
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
             { path: 'widgets', loadChildren: './widgets/widgets.module#WidgetsModule' },
             { path: 'elements', loadChildren: './elements/elements.module#ElementsModule' },

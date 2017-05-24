@@ -20,7 +20,11 @@ const MDL = {
         }
   ]
 }; 
-
+const Clients = {
+    text:'Clients',
+    link:'/clients',
+    icon:'icon-user-follow'
+}
 const CCHEST = {
     text:'Cchest',
     link:'/cchest',
@@ -138,12 +142,13 @@ const headingComponents = {
 const headingMore = {
     text: 'More',
     heading: true
-};
+}; 
 
 export const menu = [
     headingMain,
     Home,
     MDL,
+    Clients,
     communityChest,
     CCHEST,
     headingComponents,
