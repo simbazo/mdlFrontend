@@ -3,6 +3,7 @@ import {Routes,RouterModule} from '@angular/router';
 
 import {ClientComponent} from './component/client.component';
 import {NewclientComponent} from './component/newclient/new-client.component';
+import { SharedModule } from '../../shared/shared.module';
 
 const routes: Routes = [
 	{
@@ -16,7 +17,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	imports:[RouterModule.forChild(routes)],
+	imports:[SharedModule,RouterModule.forChild(routes)],
 	declarations:[ClientComponent,NewclientComponent],
 	exports:[RouterModule]
 })

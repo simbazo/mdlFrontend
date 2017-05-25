@@ -1,19 +1,19 @@
 import {NgModule} from '@angular/core';
 
 import {Routes,RouterModule} from '@angular/router';
-import { SharedModule } from '../../shared/shared.module';
+import {SaredModule} from '../../shared/shared.module';
 
 const routes: Routes = [
 	
 ];
 
+
 @NgModule({
-	imports:[RouterModule.forChild(routes),SharedModule],
+	imports:[SharedModule,RouterModule.forChild(routes)],
 	declarations:[],
 	exports:[RouterModule]
 })
 
-export class ProductsQuestionModule {
+export class AbalimiModule {
 	
 }
-
