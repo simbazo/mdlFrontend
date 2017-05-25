@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Location} from '@angular/common';
 
-@NgModule({
+@Component({
 	selector:'mdl-farm',
 	templateUrl:'./farm.component.html',
 	styleUrls:['./farm.component.scss']

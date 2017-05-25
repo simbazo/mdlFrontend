@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {Location} from '@angular/common';
 
 
 @Component({
@@ -9,7 +8,7 @@ import {Location} from '@angular/common';
 })
 
 export class FarmerComponent {
-
+	
 	constructor(){
 		
 	}

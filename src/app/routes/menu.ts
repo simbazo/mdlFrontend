@@ -57,6 +57,21 @@ const CCHEST = {
     ]
 };
 
+const Abalimi = {
+    text: 'Abalimi',
+    link: '/abalimi',
+    icon: 'fa fa-adn',
+    submenu: [
+        {
+            text:'Farmer',
+            link:'/abalimi/farmer'
+        },
+        {
+            text:'Farm',
+            link:'/abalimi/farm'
+        }
+    ]
+}
 const Profile = {
     text: 'My Account',
     link: '/profile',
@@ -151,6 +166,7 @@ export const menu = [
     Clients,
     communityChest,
     CCHEST,
+    Abalimi,
     headingComponents,
     Tables,
     Forms,

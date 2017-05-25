@@ -32,5 +32,5 @@ export class UserService {
 }
 
 /**
- * @autho [Jacinto Joao] <[jacintotbrc@gmail.com]>
+ * @author [Jacinto Joao] <[jacintotbrc@gmail.com]>
  */
