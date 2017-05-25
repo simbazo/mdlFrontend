@@ -19,8 +19,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
-import { DatepickerModule } from 'ngx-bootstrap/datepicker';
-
+import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
 
 
 import { DataFilterPipe }   from './pipes/data-filter.pipe';
@@ -48,7 +47,6 @@ import { JqcloudDirective } from './directives/jqcloud/jqcloud.directive';
         ButtonsModule.forRoot(),
         CarouselModule.forRoot(),
         CollapseModule.forRoot(),
-        DatepickerModule.forRoot(),
         BsDropdownModule.forRoot(),
         ModalModule.forRoot(),
         PaginationModule.forRoot(),
@@ -58,7 +56,8 @@ import { JqcloudDirective } from './directives/jqcloud/jqcloud.directive';
         TimepickerModule.forRoot(),
         TooltipModule.forRoot(),
         TypeaheadModule.forRoot(),
-        ToasterModule
+        ToasterModule,
+        NgxMyDatePickerModule
     ],
     providers: [
         ColorsService
@@ -86,7 +85,7 @@ import { JqcloudDirective } from './directives/jqcloud/jqcloud.directive';
         ButtonsModule,
         CarouselModule,
         CollapseModule,
-        DatepickerModule,
+        NgxMyDatePickerModule,
         BsDropdownModule,
         ModalModule,
         PaginationModule,

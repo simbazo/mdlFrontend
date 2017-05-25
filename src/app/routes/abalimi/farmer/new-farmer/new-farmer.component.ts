@@ -3,7 +3,7 @@ import {Location} from '@angular/common';
 import {Response} from '@angular/http';
 import {FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
 import {CustomValidators} from 'ng2-validation';
-
+import {INgxMyDpOptions, IMyDateModel} from 'ngx-mydatepicker';
 @Component({
 	selector:'mdl-new-farmer',
 	templateUrl:'./new-farmer.component.html',
@@ -13,6 +13,13 @@ import {CustomValidators} from 'ng2-validation';
 export class NewfarmerComponent {
 	public gender: Array<string> = ['Male','Female'];
 
+	private myOptions: INgxMyDpOptions = {
+		// other options...
+		dateFormat: 'yyyy-mm-dd',
+	};
+
+	// Initialized to specific date (09.10.2018)
+	private model: Object = { date: { year: 2018, month: 10, day: 9 } };
 	farmerForm:FormGroup;
 	constructor(private location:Location,private fb:FormBuilder){
 		this.farmerForm = fb.group({
@@ -35,6 +42,12 @@ export class NewfarmerComponent {
 
 		})
 	}
+
+	
+		// optional date changed callback
+		onDateChanged(event: IMyDateModel): void {
+			// date selected
+		}
 	goBack(): void {
 		this.location.back();
 	}
