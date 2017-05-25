@@ -10,6 +10,7 @@ import { AuthService} from './services/shared/auth.service';
 import { HelperService} from './services/shared/helper.service';
 import { AuthGuard } from './services/shared/auth.guard';
 import { throwIfAlreadyLoaded } from './module-import-guard';
+import { NodeService} from './services/editor/editor.service';
 
 import {GooglePlaceService} from './services/shared/google-place.service';
 @NgModule({
@@ -25,6 +26,7 @@ import {GooglePlaceService} from './services/shared/google-place.service';
         AuthService,
         HelperService,
         AuthGuard,
+        NodeService,
         GooglePlaceService
     ],
     declarations: [

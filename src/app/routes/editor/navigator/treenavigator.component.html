@@ -1,0 +1,50 @@
+<div class="content-heading">Navigator
+	<small>Tree Project Navigator</small>
+</div>
+
+<div class="panel panel-primary">
+
+	<div class="panel-heading">
+		<div class="row">
+			<div class="col-md-6">
+
+				<button (click)="goBack()" class="btn btn-labeled btn-info"><span class="btn-label"><i class="fa fa-arrow-left" _ngcontent-c49=""></i></span>Back</button> &nbsp;&nbsp;&nbsp;
+				<button class="btn btn-info">Organise List</button>
+			</div>
+			<div class="col-md-6"><button class="btn btn-info">Enable Preview</button> <div class="form-group pull-right"><input type="text" class="form-control" placeholder="search for node ..."></div></div>
+		</div> 
+	</div> 
+
+	<div class="panel-body"> 
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Project Name</th>
+					<th>User Created</th>
+					<th>Date Created</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Hell dos Santos</td>
+					<td>Male</td>
+					<td>122343</td>
+					<td>
+						<a href="" class="btn btn-default bg-gray-lighter tbn-xs"><span class="icon-eye"></span></a>
+						<a href="" class="btn btn-default bg-gray-lighter tbn-xs"><span class="icon-pencil"></span></a>
+						<a href="" class="btn btn-default bg-gray-lighter tbn-xs"><span class="icon-trash"></span></a>
+						<a routerLink="/editor/projects/treenavigator" class="btn btn-default bg-gray-lighter tbn-xs"><span class="icon-action-redo"></span></a>
+					</td>
+				</tr> 
+			</tbody>
+		</table>
+
+		<p-treeTable [value]="files">
+			<p-column field="name" header="Name"></p-column>
+			<p-column field="size" header="Size"></p-column>
+			<p-column field="type" header="Type"></p-column>
+		</p-treeTable>
+	</div>
+
+</div>

@@ -7,7 +7,7 @@
 		<div class="row">
 			<div class="col-md-6" style="width:1035px;margin-left:20px"><button (click)="goBack()" class="btn btn-labeled btn-info"><span class="btn-label"><i class="fa fa-arrow-left" _ngcontent-c49=""></i></span>Back</button>
 			</div>
-		</div> 
+		</div>
 	</div>
 	<div class="panel-body">
 		<div class="col-md-8 col-md-offset-2">
@@ -31,7 +31,7 @@
 			<div class="form-group">
 				<label for="dob">Date of Birth</label>
 				<div class="input-group">
-				<input class="form-control" style="float:none" placeholder="Select a date" ngx-mydatepicker name="mydate" (click)="dp.toggleCalendar()"
+					<input class="form-control" style="float:none" placeholder="Select a date" ngx-mydatepicker name="mydate" (click)="dp.toggleCalendar()"
 					[(ngModel)]="model" [options]="myOptions" #dp="ngx-mydatepicker" (dateChanged)="onDateChanged($event)"/>
 					<span class="input-group-addon" (click)="dp.clearDate()"><i class="fa fa-remove"></i></span>
 				</div>

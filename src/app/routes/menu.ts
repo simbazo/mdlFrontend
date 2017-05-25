@@ -5,6 +5,11 @@ const Home = {
     icon: 'icon-home'
 };
 
+const Editor = {
+    text:'Editor',
+    link:'/editor/projects',
+    icon:'fa fa-rupee'
+}
 const MDL = {
     text:'MDL Admin',
     link:'/mdl',
@@ -162,6 +167,7 @@ const headingMore = {
 export const menu = [
     headingMain,
     Home,
+    Editor,
     MDL,
     Clients,
     communityChest,
