@@ -21,6 +21,6 @@ export class TreenavigatorComponent implements OnInit {
 		this.location.back();
 	}
 	ngOnInit(){
-		 this.nodeService.getFilesystem().then(files => this.files = files);
+		 
 	}
 }

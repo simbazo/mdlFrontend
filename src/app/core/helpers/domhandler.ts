@@ -379,3 +379,4 @@ export class DomHandler {
         return scrollbarWidth;
     }
 }
+/*@author Jacinto Joao*/
