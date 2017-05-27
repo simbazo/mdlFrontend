@@ -1,0 +1,12 @@
+.nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a {
+    border-radius: 0px;
+    margin-right: 0px;
+    background-color:#5d9cec;
+    color: #fff;
+    border:0px;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    background-color:#23b7e5;
+    border:1px solid #fff;
+}

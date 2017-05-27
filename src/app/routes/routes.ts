@@ -20,7 +20,8 @@ export const routes = [
             { path: 'mdl', loadChildren:'./mdl/mdl.module#MdlModule',canActivate: [AuthGuard] },
             { path: 'cchest',loadChildren:'./cchest/cchest.module#CChestModule',canActivate: [AuthGuard]},
             { path: 'clients',loadChildren:'./clients/client.module#ClientModule',canActivate:[AuthGuard]},
-            { path: 'abalimi',loadChildren:'./abalimi/abalimi.module#AbalimiModule',canActivate:[AuthGuard]}
+            { path: 'abalimi',loadChildren:'./abalimi/abalimi.module#AbalimiModule',canActivate:[AuthGuard]},
+            { path: 'formcomponents',loadChildren:'./productquestions/products-questions.module#ProductsQuestionModule',canActivate:[AuthGuard]}
         ]
     },
 

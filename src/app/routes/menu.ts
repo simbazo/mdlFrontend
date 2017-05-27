@@ -10,6 +10,11 @@ const Editor = {
     link:'/editor/projects',
     icon:'fa fa-rupee'
 }
+const ProductQuestion = {
+    text: 'Products & Questions',
+    link: '/formcomponents/products',
+    icon: 'fa fa-reorder '
+}
 const MDL = {
     text:'MDL Admin',
     link:'/mdl',
@@ -168,6 +173,7 @@ export const menu = [
     headingMain,
     Home,
     Editor,
+    ProductQuestion,
     MDL,
     Clients,
     communityChest,
