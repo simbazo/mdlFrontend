@@ -176,3 +176,7 @@ export class GooglePlaceService {
   }
 
 }
+
+/**
+ * @author [Jacinto Joao]
+ */

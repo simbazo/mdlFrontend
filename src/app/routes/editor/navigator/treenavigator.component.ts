@@ -1,4 +1,4 @@
-import {Component,NgOnInit} from '@angular/core';
+import {Component,OnInit} from '@angular/core';
 
 import {Location} from '@angular/common';
 import {NodeService} from './../../../core/services/editor/editor.service';
@@ -11,7 +11,7 @@ import {NodeService} from './../../../core/services/editor/editor.service';
 
 export class TreenavigatorComponent implements OnInit {
 
-	files: TreeNode[];
+	//files: TreeNode[];
 
 	constructor(private location:Location,private nodeService: NodeService){
 

@@ -29,6 +29,10 @@ export class HelperService {
 		console.error(errMsg);
 		return Observable.throw(errMsg);
     }
+    
+	getToken(){
+		return localStorage.getItem('token');
+	}
 }
 
 /**

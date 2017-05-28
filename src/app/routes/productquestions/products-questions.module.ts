@@ -7,6 +7,7 @@ import {QuestiontypesComponent} from './questiontypes/questiontypes.component';
 import {QuestionsComponent} from './questions/questions.component';
 import {ProductsComponent} from './products/products.component';
 import {TabnavComponent} from './tabnav/tabnav.component';
+import {NewproductComponent} from './products/new-product/new-product.component';
 
 const routes: Routes = [
 	{
@@ -26,6 +27,7 @@ const routes: Routes = [
 	QuestiontypesComponent,
 	ProductsComponent,
 	QuestionsComponent,
+	NewproductComponent,
 	TabnavComponent
 	],
 	exports:[RouterModule]

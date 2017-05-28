@@ -11,18 +11,59 @@
 	</div> 
 	<div class="panel-body">
 		<div class="col-md-8 col-md-offset-2">
+			<form class="form-horizontal" [formGroup]="clientForm" novalidate="" role="form" (submit)="submitForm($event, clientForm.value)" autocomplete="off">
 			<div class="form-group">
 				<label for="shortname">Name</label>
-				<input class="form-control"/>
+				<input class="form-control" formControlName="short_name" />
+				<small class="text-danger" *ngIf="clientForm.controls['short_name'].hasError('required') && (clientForm.controls['short_name'].dirty || clientForm.controls['short_name'].touched)"><i>Name is required field.</i></small>
 			</div>
 			<div class="form-group">
 				<label for="shortname">Long Name</label>
-				<input class="form-control"/>
+				<input class="form-control" formControlName="long_name" />
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="text" formControlName="email" class="form-control">
+				<small class="text-danger" *ngIf="clientForm.controls['email'].hasError('required') && (clientForm.controls['email'].dirty || clientForm.controls['email'].touched)"><i>Email is required field.</i></small>
+				<small class="text-danger" *ngIf="clientForm.controls['email'].hasError('email') && (clientForm.controls['email'].dirty || clientForm.controls['email'].touched)"><i>The email must be a valid email address</i></small>
+			</div>
+			<div class="form-group">
+				<label for="phone">Phone</label>
+				<input type="text" formControlName="phone" class="form-control"/>
+				<small class="text-danger" *ngIf="clientForm.controls['phone'].hasError('required') && (clientForm.controls['phone'].dirty || clientForm.controls['phone'].touched)"><i>Phone is required field.</i></small>
+			</div>
+			<div class="form-group">
+				<label for="">Fax</label>
+				<input type="text" formControlName="fax" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="address_id">Address</label>
+				<input type="text" formControlName="address_id" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="contact_person_fname">Contact Person Name</label>
+				<input type="text" formControlName="contact_person_fname" class="form-control">
+				<small class="text-danger" *ngIf="clientForm.controls['contact_person_fname'].hasError('required') && (clientForm.controls['contact_person_fname'].dirty || clientForm.controls['contact_person_fname'].touched)"><i>Contact Person Name is required</i></small>
+			</div>
+			<div class="form-group">
+				<label for="">Contact Person Surname</label>
+				<input type="text" formControlName="contact_person_lname" class="form-control">
+				<small class="text-danger" *ngIf="clientForm.controls['contact_person_lname'].hasError('required') && (clientForm.controls['contact_person_lname'].dirty || clientForm.controls['contact_person_lname'].touched)"><i>Contact Person Surname is required.</i></small>
+			</div>
+			<div class="form-group">
+				<label for="">Contact Person Email</label>
+				<input type="text" formControlName="contact_person_email" class="form-control">
+				<small class="text-danger" *ngIf="clientForm.controls['contact_person_email'].hasError('email') && (clientForm.controls['contact_person_email'].dirty || clientForm.controls['contact_person_email'].touched)"><i>The email must be a valid email address</i></small>
+			</div>
+			<div class="form-group">
+				<label for="">Contact Person Cell Number</label>
+				<input type="text" formControlName="contact_person_cell" class="form-control">
 			</div>
 
 			<div class="form-group">
-				<button type="submit" class="btn btn-primary">Save</button>
+				<button class="btn btn-primary btn-outline btn-oval" type="submit" [disabled]="!clientForm.valid">Save</button>
 			</div>
+			</form>
 		</div>
 	</div>
 </div>

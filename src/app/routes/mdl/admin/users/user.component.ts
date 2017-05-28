@@ -19,7 +19,7 @@ export class UserComponent implements OnInit {
     public filterQuery = "";
     public rowsOnPage = 10;
     public sortBy = "email";
-    public sortOrder = "asc";
+    public sortOrder = "asc"; 
 
 	constructor(private _users:UserService, private http:Http){
 
@@ -27,6 +27,8 @@ export class UserComponent implements OnInit {
 
 	 ngOnInit(): void {
         this.getUsers();
+
+        console.log(this.getUsers());
     }
 
 	getUsers(){ 
@@ -34,7 +36,7 @@ export class UserComponent implements OnInit {
 					.subscribe(
 						users => this.data = users,
 						error => this.errorMessage = <any>error
-						);
+						); 
 
 	}
 

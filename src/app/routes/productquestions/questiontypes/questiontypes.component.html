@@ -1,19 +1,19 @@
 <div class="content-heading">Data Type
-    <small></small>
+	<small></small>
 </div>
- 
+
 <div class="panel panel-primary">
-       <div class="panel-heading">
-            <mdl-tabnav></mdl-tabnav>
-       </div>
-    <div class="panel-body">
-    	<table class="table">
+	<div class="panel-heading">
+		<mdl-tabnav></mdl-tabnav>
+	</div>
+	<div class="panel-body">
+		<table class="table">
 			<thead>
 				<tr>
 					<th>Name</th>
 					<th>User Created</th>
 					<th>Date Created</th>
-					<th><a href="" class="btn btn-info">New Data Type</a></th>
+					<th><button  class="btn btn-info" (click)="classicModal.show()">New Data Type</button></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -22,12 +22,36 @@
 					<td>Male</td>
 					<td>122343</td>
 					<td>
-					<a href="" class="btn btn-default bg-gray-lighter tbn-xs" [tooltip]="'Show'" placement="left"><span class="icon-eye"></span></a>
-					<a href="" class="btn btn-default bg-gray-lighter tbn-xs"><span class="icon-pencil" [tooltip]="'Edit'" placement="top"></span></a>
-					<a href="" class="btn btn-default bg-gray-lighter tbn-xs"><span class="icon-trash" [tooltip]="'Delete'" placement="right"></span></a>
+						<a href="" class="btn btn-default bg-gray-lighter tbn-xs" [tooltip]="'Show'" placement="left"><span class="icon-eye"></span></a>
+						<a href="" class="btn btn-default bg-gray-lighter tbn-xs"><span class="icon-pencil" [tooltip]="'Edit'" placement="top"></span></a>
+						<a href="" class="btn btn-default bg-gray-lighter tbn-xs"><span class="icon-trash" [tooltip]="'Delete'" placement="right"></span></a>
 					</td>
 				</tr> 
 			</tbody>
 		</table>
-    </div>
+
+		<div class="modal fade" bsModal #classicModal="bs-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" [config]="{backdrop: false}">
+			<div class="modal-dialog modal-md">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" aria-label="Close" (click)="classicModal.hide()">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title">New Data Type</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="datatype">Data Type</label>
+							<input type="text" class="form-control">
+						</div>
+						<div class="form-group">
+							<div class="button btn btn-primary btn-outline">
+							Save</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+

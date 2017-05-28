@@ -11,18 +11,26 @@
 	</div>
 
 	<div class="panel-body">
-		<table class="table">
+		<table class="table text-center">
 			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Long Name</th>
+				<tr class="text-center">
+					<th>Client Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Contact Person</th>
+					<th>Address</th>
+					<th>Town</th>
 					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>Hansen</td>
-					<td>Leonel</td>
+				<tr *ngFor="let client of data">
+					<td>{{client.short_name}} {{client.long_name}}</td>
+					<td>{{client.email}}</td>
+					<td>{{client.phone}}</td>
+					<td>{{client.contact_person_fname}} {{client.contact_person_lname}}</td>
+					<td>{{client.adress_id}}</td>
+					<td></td>
 					<td><a href="" class="btn btn-default bg-gray-lighter tbn-xs"><span class="icon-pencil"></span></a>
 
 						<div class="btn-group" dropdown>
