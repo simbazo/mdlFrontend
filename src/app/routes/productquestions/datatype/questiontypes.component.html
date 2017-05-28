@@ -10,17 +10,17 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th>Name</th>
+					<th>Data Type</th>
 					<th>User Created</th>
 					<th>Date Created</th>
 					<th><button  class="btn btn-info" (click)="classicModal.show()">New Data Type</button></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>Hell dos Santos</td>
-					<td>Male</td>
-					<td>122343</td>
+				<tr *ngFor="let datatype of data">
+					<td>{{datatype.data_type}}</td>
+					<td>{{datatype.user.first_name + ' ' + datatype.user.last_name}}</td>
+					<td>{{datatype.created_at}}</td>
 					<td>
 						<a href="" class="btn btn-default bg-gray-lighter tbn-xs" [tooltip]="'Show'" placement="left"><span class="icon-eye"></span></a>
 						<a href="" class="btn btn-default bg-gray-lighter tbn-xs"><span class="icon-pencil" [tooltip]="'Edit'" placement="top"></span></a>
@@ -40,14 +40,7 @@
 						<h4 class="modal-title">New Data Type</h4>
 					</div>
 					<div class="modal-body">
-						<div class="form-group">
-							<label for="datatype">Data Type</label>
-							<input type="text" class="form-control">
-						</div>
-						<div class="form-group">
-							<div class="button btn btn-primary btn-outline">
-							Save</div>
-						</div>
+						<mdl-new-datatype></mdl-new-datatype>
 					</div>
 				</div>
 			</div>

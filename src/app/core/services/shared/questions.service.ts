@@ -8,7 +8,7 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 
-export class ProductsService {
+export class QuestionsService {
 
 	constructor(private _http:Http,
 	 private settings:SettingsService,
@@ -19,14 +19,14 @@ export class ProductsService {
 	}
 
 	index(): Observable<any>{
-		return this._http.get(this.settings.api+'products?token='+this.helper.getToken())
+		return this._http.get(this.settings.api+'questions?token='+this.helper.getToken())
 					.map(this.helper.extractData)
 					.catch(this.helper.handleServerError);
 
 	}
 
-	store(products){
-		return this._http.post(this.settings.api+'products/store?token='+this.helper.getToken(),products,{headers:this.settings.headers})
+	store(questions){
+		return this._http.post(this.settings.api+'questions/store?token='+this.helper.getToken(),questions,{headers:this.settings.headers})
 				.map(this.helper.extractData)
 				.catch(this.helper.handleServerError);
 	}

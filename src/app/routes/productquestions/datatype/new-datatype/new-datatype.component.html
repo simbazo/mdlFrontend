@@ -1,0 +1,10 @@
+<form [formGroup]="datatypeForm" novalidate="" role="form" (submit)="submitForm($event, datatypeForm.value)" autocomplete="off">
+			<div class="form-group">
+			<label for="datatype">Data Type</label>
+			<input type="text" class="form-control" formControlName="data_type">
+			<small class="text-danger" *ngIf="datatypeForm.controls['data_type'].hasError('required') && (datatypeForm.controls['data_type'].dirty || datatypeForm.controls['data_type'].touched)"><i>Data Type is required field.</i></small>
+		</div>
+		<div class="form-group">
+			<button class="btn btn-primary btn-outline btn-oval" type="submit" [disabled]="!datatypeForm.valid">Save</button>
+		</div>
+</form>
