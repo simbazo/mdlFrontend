@@ -17,10 +17,10 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>Hell dos Santos</td>
-					<td>Male</td>
-					<td>122343</td>
+				<tr *ngFor="let question of data">
+					<td>{{question.datatype.data_type}}</td>
+					<td>{{question.question}}</td>
+					<td>{{question.created_at}}</td>
 					<td>
 					<a href="" class="btn btn-default bg-gray-lighter tbn-xs" [tooltip]="'Show'" placement="left"><span class="icon-eye"></span></a>
 					<a href="" class="btn btn-default bg-gray-lighter tbn-xs"><span class="icon-pencil" [tooltip]="'Edit'" placement="top"></span></a>

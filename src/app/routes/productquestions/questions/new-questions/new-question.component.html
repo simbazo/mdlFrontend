@@ -1,16 +1,17 @@
 <form [formGroup]="questionsForm" novalidate="" role="form" (submit)="submitForm($event, questionsForm.value)" autocomplete="off">
-		<div class="form-group">
-			<label for="datatype">Data Type</label>
-			<ng-select [allowClear]="true" [items]="gender" [disabled]="disabled" (data)="refreshValue($event)" (selected)="selected($event)" (removed)="removed($event)" (typed)="typed($event)" placeholder="Select gender Type" formControlName="data_type">
-				</ng-select>
-			<small class="text-danger" *ngIf="questionsForm.controls['data_type'].hasError('required') && (questionsForm.controls['data_type'].dirty || questionsForm.controls['data_type'].touched)"><i>Data Type is required field.</i></small>
-		</div>
-		<div class="form-group">
-			<label for="datatype">Question</label>
-			<input type="text" class="form-control" formControlName="question">
-			<small class="text-danger" *ngIf="questionsForm.controls['question'].hasError('required') && (questionsForm.controls['question'].dirty || questionsForm.controls['question'].touched)"><i>Question is required field.</i></small>
-		</div>
-		<div class="form-group">
-			<button class="btn btn-primary btn-outline btn-oval" type="submit" [disabled]="!questionsForm.valid">Save</button>
-		</div>
-</form>
+	<div class="form-group">
+		<label for="datatype">Data Type</label>
+		<select class="form-control" formControlName="data_type_id" >
+			<option *ngFor="let type of data" value="{{type.uuid}}">{{type.data_type}}</option>
+		</select>
+		<small class="text-danger" *ngIf="questionsForm.controls['data_type_id'].hasError('required') && (questionsForm.controls['data_type_id'].dirty || questionsForm.controls['data_type_id'].touched)"><i>Data Type is required field.</i></small>
+	</div>
+	<div class="form-group">
+		<label for="datatype">Question</label>
+		<input type="text" class="form-control" formControlName="question">
+		<small class="text-danger" *ngIf="questionsForm.controls['question'].hasError('required') && (questionsForm.controls['question'].dirty || questionsForm.controls['question'].touched)"><i>Question is required field.</i></small>
+	</div>
+	<div class="form-group">
+		<button class="btn btn-primary btn-outline btn-oval" type="submit" [disabled]="!questionsForm.valid">Save</button>
+	</div>
+</form> 

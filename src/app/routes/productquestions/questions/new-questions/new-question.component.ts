@@ -2,8 +2,9 @@ import {Component,OnInit} from '@angular/core';
 import {Response} from '@angular/http';
 import {FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
 import {CustomValidators} from 'ng2-validation';
-import {DatatypeService} from './../../../../core/services/shared/datatype.service';
-import {Datatype} from './../../../../core/interfaces/shared/Datatype';
+import {QuestionsService} from './../../../../core/services/shared/questions.service';
+import {Questions} from './../../../../core/interfaces/shared/Questions';
+import {datatype} from './datatype';
 
 @Component({
 	selector:'mdl-new-question',
@@ -12,22 +13,30 @@ import {Datatype} from './../../../../core/interfaces/shared/Datatype';
 })
 
 export class NewquestionComponent implements OnInit{
-	public gender: Array<string> = ['Male','Female'];
-	datatype:Datatype[];
+	errorMessage:string;
+	question:Questions[];
+	data:datatype[];
+	public gender : Array<any> = [];
 	questionsForm:FormGroup;
-	constructor(fb:FormBuilder,private datatypeService:DatatypeService){
+	constructor(fb:FormBuilder,private questionService:QuestionsService){
 		this.questionsForm = fb.group({
-			'data_type': [null,[Validators.required]],
+			'data_type_id': [null,[Validators.required]],
 			'question': [null,[Validators.required]]
 		});
 		
 	}
 
-	ngOnInit(){
+	list(){
+		return this.questionService.datatype()
+		.subscribe(
+			datatype => this.data = datatype,
+			error 	=> this.errorMessage = <any>error
+			);
 
 	}
 
-	list(){
+	ngOnInit(){
+		this.list();
 
 	}
 
@@ -37,7 +46,7 @@ export class NewquestionComponent implements OnInit{
 			this.questionsForm.controls[d].markAsTouched();
 		}
 		if(this.questionsForm.valid){
-			this.datatypeService.store(this.questionsForm.value)
+			this.questionService.store(this.questionsForm.value)
 			.subscribe(res => console.log(res));
 		}
 	}

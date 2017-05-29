@@ -38,4 +38,11 @@ export class QuestionsService {
 	destroy(){
 		
 	}
+
+	datatype(): Observable<any>{
+		return this._http.get(this.settings.api+'questions/datatype?token='+this.helper.getToken())
+					.map(this.helper.extractData)
+					.catch(this.helper.handleServerError);
+
+	}
 }

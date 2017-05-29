@@ -38,4 +38,10 @@ export class ProductsService {
 	destroy(){
 		
 	}
+	clients(): Observable<any>{
+		return this._http.get(this.settings.api+'products/clients?token='+this.helper.getToken())
+					.map(this.helper.extractData)
+					.catch(this.helper.handleServerError);
+
+	}
 }
