@@ -18,9 +18,9 @@ export const routes = [
             { path: 'home', loadChildren: './home/home.module#HomeModule',canActivate: [AuthGuard] },
             { path: 'editor',loadChildren:'./editor/editor.module#EditorModule',canActivate:[AuthGuard]},
             { path: 'mdl', loadChildren:'./mdl/mdl.module#MdlModule',canActivate: [AuthGuard] },
-            { path: 'cchest',loadChildren:'./cchest/cchest.module#CChestModule',canActivate: [AuthGuard]},
             { path: 'clients',loadChildren:'./clients/client.module#ClientModule',canActivate:[AuthGuard]},
             { path: 'abalimi',loadChildren:'./abalimi/abalimi.module#AbalimiModule',canActivate:[AuthGuard]},
+            { path: 'formgroup',loadChildren:'./formgroups/formgroup.module#FormgroupModule',canActivate:[AuthGuard]},
             { path: 'formcomponents',loadChildren:'./productquestions/products-questions.module#ProductsQuestionModule',canActivate:[AuthGuard]}
         ]
     },

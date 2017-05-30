@@ -5,6 +5,7 @@ import {SharedModule} from '../../shared/shared.module';
 import {ProjectComponent} from './projects/project.component';
 import {NewprojectComponent} from './projects/new-project/new-project.component';
 import {TreenavigatorComponent} from './navigator/treenavigator.component';
+import {TreeTableModule} from 'primeng/primeng';
 
 const routes:Routes = [
 	{
@@ -20,8 +21,12 @@ const routes:Routes = [
 
 @NgModule({
 	imports:[SharedModule,
-	RouterModule.forChild(routes)],
-	declarations:[ProjectComponent,NewprojectComponent,TreenavigatorComponent],
+	RouterModule.forChild(routes),
+	TreeTableModule
+	],
+	declarations:[ProjectComponent,
+	NewprojectComponent,
+	TreenavigatorComponent],
 	exports:[RouterModule],
 })
 

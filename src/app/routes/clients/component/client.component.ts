@@ -19,6 +19,9 @@ export class ClientComponent implements OnInit{
 
 	ngOnInit():void{
 		this.list();
+
+		console.log(this.list());
+
 	}
 
 	list(){

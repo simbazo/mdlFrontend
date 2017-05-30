@@ -1,0 +1,36 @@
+<div class="col-md-12">
+	<form action="" [formGroup]="searchForm">
+	<div class="form-group">
+		<label for="search">Question</label>
+		<div class="input-group">
+			<input class="form-control" placeholder="search for question"  formControlName="question" [(ngModel)]="question" (keyup)="searchQuestions()"/>
+			<span class="input-group-addon"><i class="fa fa-search"></i></span>
+		</div>
+	</div>
+
+		<div *ngIf="questions" class="form-group">
+				<div class="row">
+				<form [formGroup]="questionForm" (submit)="submitForm($event, questionForm.value)">
+				<div class="col-md-12">
+				<li *ngFor="let question of questions" class="list-group-item bg-gray-light">{{question.text}}
+						<input type="checkbox" value="{{question.id}}" class="pull-right" formControlName="question">
+					</li>
+					<button class="btn btn-default bg-gray btn-block  pull-right">Save</button>
+				</div>
+				</form>
+				</div>
+		</div>
+	</form>
+	<div class="list-group">
+		<li class="list-group-item">Hansen
+			<a href="" class="pull-right">
+				<span class="icon-trash" [tooltip]="'Delete'" placement="right"></span>
+			</a>
+		</li>
+		<li class="list-group-item">Hansen
+			<a href="" class="pull-right">
+				<span class="icon-trash"  [tooltip]="'Delete'" placement="right"></span>
+			</a>
+		</li>
+	</div>
+</div>

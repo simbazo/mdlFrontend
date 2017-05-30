@@ -1,6 +1,11 @@
 import {Injectable} from '@angular/core';
 import {Http, Response} from '@angular/http';
-import {TreeNode} from '../../interfaces/editor/api';
+import {TreeNode} from 'primeng/primeng';
+import {HelperService} from './../shared/helper.service';
+import {Project} from './../../../routes/editor/treetable/Project';
+import {Observable} from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class NodeService {
@@ -19,10 +24,11 @@ export class NodeService {
                     .then(res => <TreeNode[]> res.json().data);
     }
     
-    getFilesystem() {
-        return this.http.get('assets/server/data/filesystem.json')
+    getFileSystem(): any {
+        return this.http.get('http://deveditor.dev:8000/api/v1/treetable')
                     .toPromise()
-                    .then(res => <TreeNode[]> res.json().data);
+                    .then(res => <TreeNode[]> res.json().data)
+                    .then(data => { return data; });
     }
     
     getLazyFilesystem() {

@@ -11,6 +11,7 @@ import {QuestiontypesComponent} from './datatype/questiontypes.component';
 import {QuestionsComponent} from './questions/questions.component';
 import {ProductsComponent} from './products/products.component';
 import {TabnavComponent} from './tabnav/tabnav.component';
+import {ProductQuestion} from './products/product-question/product-question.component';
 
 const routes: Routes = [
 	{ 
@@ -37,7 +38,8 @@ const routes: Routes = [
 	NewproductComponent,
 	NewdatatypeComponent,
 	NewquestionComponent,
-	TabnavComponent
+	TabnavComponent,
+	ProductQuestion
 	],
 	exports:[RouterModule]
 })

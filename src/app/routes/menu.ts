@@ -15,6 +15,12 @@ const ProductQuestion = {
     link: '/formcomponents/products',
     icon: 'fa fa-reorder '
 }
+const Formgroup = {
+    text:' Forms',
+    link:'/formgroup',
+    icon:'icon-social-foursqare'
+
+}
 const MDL = {
     text:'MDL Admin',
     link:'/mdl',
@@ -174,14 +180,8 @@ export const menu = [
     Home,
     Editor,
     ProductQuestion,
-    MDL,
+    Formgroup,
     Clients,
-    communityChest,
-    CCHEST,
-    Abalimi,
-    headingComponents,
-    Tables,
-    Forms,
     headingMore,
     Profile,
     Logout

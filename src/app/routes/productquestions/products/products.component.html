@@ -7,21 +7,18 @@
             <mdl-tabnav></mdl-tabnav>
        </div>
     <div class="panel-body">
+    <div class="col-md-6">
     	<table class="table">
 			<thead>
 				<tr>
 					<th>Name</th>
-					<th>User Created</th>
-					<th>Date Created</th>
-					<th><button class="btn btn-info" (click)="productModal.show()">New Product</button></th>
+					<th class="right"><button class="btn btn-info" (click)="productModal.show()">New Product</button></th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
 					<td>Hell dos Santos</td>
-					<td>Male</td>
-					<td>122343</td>
-					<td>
+					<td class="right">
 					<a href="" class="btn btn-default bg-gray-lighter tbn-xs" [tooltip]="'Show'" placement="left"><span class="icon-eye"></span></a>
 					<a href="" class="btn btn-default bg-gray-lighter tbn-xs"><span class="icon-pencil" [tooltip]="'Edit'" placement="top"></span></a>
 					<a href="" class="btn btn-default bg-gray-lighter tbn-xs"><span class="icon-trash" [tooltip]="'Delete'" placement="right"></span></a>
@@ -43,6 +40,10 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		</div>
+		<div class="col-md-6 border-left">
+			<mdl-product-question></mdl-product-question>
 		</div>
     </div>
 </div>

@@ -44,4 +44,10 @@ export class ProductsService {
 					.catch(this.helper.handleServerError);
 
 	}
+
+	searchQuestions(data){
+		return this._http.post(this.settings.api+'products/search?token='+this.helper.getToken(),data,{headers:this.settings.headers})
+				.map(this.helper.extractData)
+				.catch(this.helper.handleServerError);
+	}
 }

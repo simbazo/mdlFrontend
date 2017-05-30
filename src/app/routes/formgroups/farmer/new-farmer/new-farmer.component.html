@@ -1,0 +1,88 @@
+<div class="content-heading">
+	New Farmer
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<div class="row">
+			<div class="col-md-6" style="width:1035px;margin-left:20px"><button (click)="goBack()" class="btn btn-labeled btn-info"><span class="btn-label"><i class="fa fa-arrow-left" _ngcontent-c49=""></i></span>Back</button>
+			</div>
+		</div>
+	</div>
+	<div class="panel-body">
+		<div class="col-md-8 col-md-offset-2">
+			<form [formGroup]="farmerForm">
+				<div class="form-group">
+					<label for="shortname">First Name</label>
+					<input class="form-control" formControlName="first_name"/>
+				</div> 
+				<div class="form-group">
+					<label for="shortname">Last Name</label>
+					<input class="form-control" formControlName="last_name"/>
+				</div>
+				<div class="form-group">
+					<label for="identitynumber">ID Number</label>
+					<input type="text" class="form-control" formControlName="id_number">
+				</div>
+				<div class="form-group">
+					<label for="dob">Date of Birth</label>
+					<div class="input-group">
+						<input class="form-control" style="float:none" placeholder="Select a date" ngx-mydatepicker  (click)="dp.toggleCalendar()"
+						[(ngModel)]="model" [options]="myOptions" #dp="ngx-mydatepicker" (dateChanged)="onDateChanged($event)" formControlName="dob"/>
+						<span class="input-group-addon" (click)="dp.clearDate()"><i class="fa fa-remove"></i></span>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="">Gender</label>
+					<ng-select [allowClear]="true" [items]="gender" [disabled]="disabled" (data)="refreshValue($event)" (selected)="selected($event)" (removed)="removed($event)" (typed)="typed($event)" formControlName="gender" placeholder="Select gender Type">
+					</ng-select>
+				</div>
+				<div class="form-group">
+					<label class="">Race</label>
+					<ng-select [allowClear]="true" [items]="race" [disabled]="disabled" (data)="refreshValue($event)" (selected)="selected($event)" (removed)="removed($event)" (typed)="typed($event)" formControlName="gender" placeholder="Select race">
+					</ng-select>
+				</div>
+				<div class="form-group">
+					<label for="identitynumber">Phone/Cell</label>
+					<input type="text" class="form-control" formControlName="phone">
+				</div>
+				<div class="form-group">
+					<label for="identitynumber">Email</label>
+					<input type="text" class="form-control" formControlName="email">
+				</div>
+				<div class="form-group">
+					<label for="city">Address</label>
+					<input type="text" size="100" class="form-control" 
+					[(ngModel)]="search" 
+					[options]='options' 
+					(setAddress) = "getAddress($event)"
+					(street_number) = 'street_number=$event'
+					(street)= 'street=$event'
+					(city)= 'city=$event'
+					(state)='state=$event'
+					(district)='district=$event'
+					(country)='country=$event'
+					(postal_code)='postal_code=$event'
+					(lat)='lat=$event' 
+					(lng)='lng=$event' 
+					(adr_address)='adr_address=$event' 
+					(name)='name=$event' 
+					(place_id)='place_id=$event'  
+					(types)='types=$event' 
+					(url)='url=$event'  
+					(utc_offset)='utc_offset=$event' 
+					(vicinity)='vicinity=$event' 
+					(photos)='photos=$event' 
+					(airport)='airport=$event' 
+					(CountryCodes)='CountryCodes=$event'
+					id="autocomplete" formControlName="address"
+					ng2-google-place-autocomplete /> 
+				</div>
+				<div class="form-group">
+					<button type="submit" [disabled]="!farmerForm.valid" class="btn btn-primary">Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
