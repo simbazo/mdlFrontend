@@ -24,32 +24,24 @@ export class NewngoComponent {
        }
 	// Initialized to specific date (09.10.2018)
 	private model: Object = { date: { year: 2018, month: 10, day: 9 } };
-	farmerForm:FormGroup;
+	
+	public types: Array<string> = ['NGO Working on Drugs','NGO working on Crime',
+									'Service Orientation','Charitable Orientation',
+									'Empowering Orientation','Community-based Organizations',
+									'Citywide Organizations','National NGOs','International NGOs','Others'
+									];
+	public areas: Array<string> = 	['HIV/AIDS','Counselling','Education','Prevention','Rehabilitation','Training','Others'];							
+	ngoForm:FormGroup;
 	constructor(private location:Location,private fb:FormBuilder){
-		this.farmerForm = fb.group({
-			'first_name':[null,[Validators.required]],
-			'last_name':[null,[Validators.required]],
-			'gender':[null,[Validators.required]],
-			'id_number':[null,[Validators.compose([Validators.required, CustomValidators.email])]],
-			'dob':[null,[Validators.required]],
-			'disabled':[null,[Validators.required]],
-			'age':[null,[Validators.required]],
-			'race':['null',[Validators.required]],
-			'projects':[],
-			'employee_status':[],
+		this.ngoForm = fb.group({
+			'ngotype':[null,[Validators.required]],
+			'areas':[null,[Validators.required]],
+			'acronym':[null,[Validators.required]],
+			'email':[null,[Validators.compose([Validators.required, CustomValidators.email])]],
+			'name':[null,[Validators.required]],
+			'contact_person':[null,[Validators.required]],
 			'address':[],
 			'phone':[],
-			'email':[],
-			'localAddress':fb.group({
-				'country_id':[null,[Validators.required]],
-				'province':[],
-				'search':[],
-				'city':[null,[Validators.required]],
-				'address':[null,[Validators.required]],
-				'postal_code':[null,Validators.pattern("^[1-9][0-9]{4}$")],
-				'pobox':[null,Validators.pattern("^[1-9][0-9]{4}$")],
-			})
-
 		})
 	}
 
