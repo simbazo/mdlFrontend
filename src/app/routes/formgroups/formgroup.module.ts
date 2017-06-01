@@ -16,6 +16,8 @@ import {NewcontactComponent} from './contact/new-contact/new-contact.component';
 import {NewngoComponent} from './ngos/new-ngo/new-ngo.component';
 import {SharedModule} from '../../shared/shared.module';
 import { SelectModule } from 'ng2-select';
+
+//import {SelectModule} from 'angular2-select';
 const routes:Routes = [
 	{
 		path: '',component:FormcComponent
